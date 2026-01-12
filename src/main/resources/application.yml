@@ -1,9 +1,14 @@
+server:
+  port: ${PORT:8080}
+
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/usersdb
-    username: users
-    password: users123
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/usersdb}
+    username: ${DB_USER:users}
+    password: ${DB_PASSWORD:users123}
     driver-class-name: org.postgresql.Driver
+
+  jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
